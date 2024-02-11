@@ -1,0 +1,253 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#app{
+  height:100vh;
+  position: relative;
+  background-color: #ed9e77b8;
+}
+#header-back{
+  position: relative;
+  width:350px;
+  margin: auto;
+}
+#header-back>img{
+  position:absolute;
+  height:20vh;
+  width:370px;
+  z-index: 1;
+}
+header p{
+  background-color: #6c2d0d9d;
+  padding:3px 10px;
+  width:fit-content;
+  margin: 10px auto 0 auto;
+}
+header{
+  color:white;
+  position: absolute;
+  z-index:20;
+  text-align: center;
+  height:20vh;
+  padding:10px;
+  width:350px;
+  font-size: 30px;
+}
+
+
+
+
+
+/** styles for name form **/
+#name-form{
+  margin-top: 25vh;
+  height:60vh;
+  background-color:rgba(255, 255, 255, 0.278);
+  padding:40px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#name-form input{
+  font-size: 20px;
+  padding:5px 0;
+  background-color:#b64e19;
+  outline:none;
+  border:none;
+  color:white;
+  text-align: center;
+  font-weight: bold;
+}
+input::placeholder{
+  color:#5a2408;
+}
+#names-submit-btn{
+  cursor:pointer;
+  padding:10px;
+  color:white;
+  font-size: 20px;
+  background-color: #6c2d0d;
+  border:4px solid #5a2408;
+}
+
+
+/** styles for game board **/
+#game-wrapper{
+  margin-top:20px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+#game{
+  display: flex;
+  align-items: self-start;
+  width:100vw;
+  justify-content: space-around;
+}
+#board{
+  background-image:url('./images/board-back.jpg') ;
+  width:fit-content;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+.row{
+  display: flex;
+}
+.box{
+  height:100px;
+  width:100px;
+  text-align: center;
+  line-height: 100px;
+  font-size:55px;
+  border:2px solid #6c2d0d;
+  text-shadow: 2px 2px 2px #6c2d0d;
+}
+.player-info{
+  color:#6c2d0d;
+  
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+.player-info>div{
+  display: flex;
+  align-items: center;
+  border:4px double #6c2d0d;
+}
+.player-info>div>h2{
+  font-size: 25px;
+  text-align: center;
+  width: 100%;
+  padding:9px 5px;
+  background-color:#6c2d0d;
+  color:white;
+}
+.icon{
+  font-size: 35px;
+  font-weight: bold;
+  text-align:center;
+  padding:3px 5px;
+  border:4px double #6c2d0d;
+  border-width:0 4px 0 0;
+}
+#msg1,#msg2{
+  text-align: center;
+  margin-top:4vh;
+  color:green;
+  font-weight: bold;
+  opacity:0;
+}
+#msg1{
+  opacity: 1;
+}
+.blink{
+  animation:blinker 1s linear infinite;
+}
+@keyframes blinker{
+  50%{
+    opacity: 0;
+  }
+}
+#winner{
+  margin-top: 7vh;
+  text-align: center;
+  color:orange;
+  font-size: 30px;
+  animation:changeColor 3s  linear infinite;
+}
+@keyframes changeColor{
+  0%{
+    color:red;
+  }
+  25%{
+    color:blue;
+  }
+  50%{
+    color:green;
+  }
+  75%{
+    color:pink;
+  }
+}
+#winner>span{
+  margin-top: 10px;
+  display: block;
+  font-size: 35px;
+}
+
+#new-game{
+  display: none;
+  width: fit-content;
+  padding:10px;
+  margin: 30px auto 0 auto;
+  color:white;
+  background-color: #5a2408;
+  outline:2px solid #5a2408;
+  border: 2px solid white;
+  cursor: pointer;
+  font-weight: bold;
+}
+#new-game:hover{
+  color:#5a2408;
+  background-color: #F2B99D;
+}
+
+.el{
+  animation:fall 8s infinite ;
+  font-size: 40px;
+  opacity: 0;
+
+}
+::placeholder{
+  text-align: center;
+  
+}
+@keyframes fall {
+  0% {
+    transform: translate(0vw,0vh) rotate(0deg) opacity(0);
+  }
+  20%{
+    opacity: 1;
+  }
+  100% {
+    transform: translate(99vw,99vh) rotate(360deg);
+  }
+}
+
+
+/*--- adding mobile responsiveness*/
+@media screen and (max-width:800px){
+  #game{
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .player-info{
+    width:100px;
+    min-width: 50px;
+  }
+  .player-info>div>p{
+    font-size: 25px;
+  }
+  .player-info>div>h2{
+    font-size: 18px;
+  }
+  #player-info-wrapper{
+    width:80%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #msg1,#msg2{
+    margin-top: 2vh;
+  }
+  #winner{
+    margin-top: 3vh;
+  }
+}
