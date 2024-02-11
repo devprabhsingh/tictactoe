@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tictactoe/static/css/main.b5e5eeb2.css",
+    "main.js": "/tictactoe/static/js/main.40b82ef7.js",
+    "static/media/sign-board.png": "/tictactoe/static/media/sign-board.97717088d326d0fc4a30.png",
+    "static/media/board-back.jpg": "/tictactoe/static/media/board-back.97b4038dbd27cfb3c94a.jpg",
+    "index.html": "/tictactoe/index.html",
+    "main.b5e5eeb2.css.map": "/tictactoe/static/css/main.b5e5eeb2.css.map",
+    "main.40b82ef7.js.map": "/tictactoe/static/js/main.40b82ef7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5e5eeb2.css",
+    "static/js/main.40b82ef7.js"
+  ]
+}
